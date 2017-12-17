@@ -35,8 +35,6 @@ object PrintableSyntax {
   }
 }
 
-final case class Cat(name: String, age: Int, color: String)
-
 object PrintableApp extends App {
   import Printable._
   import PrintableInstances._
