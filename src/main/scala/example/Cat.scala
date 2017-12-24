@@ -10,8 +10,8 @@ object Cat {
 
   implicit val catEquality = new Eq[Cat] {
     def eqv(x: Cat, y: Cat): Boolean = {
-      (x.name  === y.name) &&
-      (x.age   === y.age) &&
+      (x.name === y.name) &&
+      (x.age === y.age) &&
       (x.color === y.color)
     }
   }

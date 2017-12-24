@@ -8,11 +8,34 @@ lazy val root = (project in file("."))
       version      := "0.1.0-SNAPSHOT"
     )),
     name := "Tutorial cats",
+    licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
+  )
+  .settings(
     libraryDependencies ++= List(
       cats_core,
       scalaTest % Test
     )
   )
   .settings(
-      scalacOptions += "-Ypartial-unification"
+    fork in run := true,
+    fmtSettings,
+    scalacOptions ++= scalaCSettings
+  )
+
+lazy val fmtSettings =
+  Seq(
+    scalafmtOnCompile := true,
+    scalafmtOnCompile.in(Sbt) := false,
+    scalafmtVersion := "1.3.0"
+  )
+
+lazy val scalaCSettings =
+  Seq(
+    "-unchecked",
+    "-deprecation",
+    "-language:_",
+    "-target:jvm-1.8",
+    "-encoding", "UTF-8",
+    "-Xfatal-warnings",
+    "-Ypartial-unification"
   )

@@ -34,13 +34,3 @@ object PrintableSyntax {
     def print(implicit p: Printable[A]): Unit = p.print(a)
   }
 }
-
-object PrintableApp extends App {
-  import Printable._
-  import PrintableInstances._
-  import PrintableSyntax._
-
-  mustBeEqual(format("a"), "value=a")
-  mustBeEqual(format(123), "value=123")
-  mustBeEqual(Cat("michin", 3, "black").format, "name=michin, age=3, color=black")
-}
