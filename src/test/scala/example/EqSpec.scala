@@ -2,9 +2,9 @@ package example
 
 import org.scalatest.{MustMatchers, WordSpec}
 
-class EqExamples extends WordSpec with MustMatchers {
+class EqSpec extends WordSpec with MustMatchers {
   import cats.syntax.eq._
-  import EqExamplesOps._
+  import EqSpecOps._
 
   "Eq" must {
 
@@ -34,18 +34,21 @@ class EqExamples extends WordSpec with MustMatchers {
 
     "work on Cats" in {
       import cats.syntax.option._
-      val cat1 = Cat("Garfield", 38, "orange and black")
-      val cat2 = Cat("Heathcliff", 33, "orange and black")
+      val cat1 = Chat("Garfield", 38, "orange and black")
+      val cat2 = Chat("Heathcliff", 33, "orange and black")
+
       import cats.Eq
-      Eq[Cat].eqv(cat1, cat2) must_be (false)
-      (cat1.some === none[Cat]) must_be (false)
+      Eq[Chat].eqv(cat1, cat2) must_be (false)
+      (cat1.some === none[Chat]) must_be (false)
+
+      Chat.isEqual(cat1, cat2) must_be (false)
     }
 
   }
 
 }
 
-object EqExamplesOps {
+object EqSpecOps {
 
   implicit class BooleanOps(a: Boolean) {
     def must_be(b: Boolean): Unit = {

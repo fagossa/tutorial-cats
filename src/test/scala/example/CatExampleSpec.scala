@@ -14,7 +14,7 @@ class CatExampleSpec extends WordSpec with MustMatchers {
 
       format("a") must be("value=a")
       format(123) must be("value=123")
-      Cat("michin", 3, "black").format must be("name=michin, age=3, color=black")
+      Chat("michin", 3, "black").format must be("name=michin, age=3, color=black")
     }
   }
 
