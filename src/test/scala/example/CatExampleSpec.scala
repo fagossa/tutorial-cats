@@ -1,5 +1,6 @@
 package example
 
+import example.fixtures.ChatFixture
 import org.scalatest.{MustMatchers, WordSpec}
 
 class CatExampleSpec extends WordSpec with MustMatchers with ChatFixture {

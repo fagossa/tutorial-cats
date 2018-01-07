@@ -1,5 +1,6 @@
 package example
 
+import example.fixtures.OrderFixture
 import org.scalatest.{MustMatchers, WordSpec}
 
 class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
@@ -41,12 +42,36 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
         .combineAllOption(List.empty[String]) must be(none[String])
     }
 
+    "allow Option[Int]" in {
+      // TODO: find the correct imports to make this work
+      import cats.syntax.option._
+      import cats.instances.int._
+      import cats.instances.option._
+
+      Monoid[Option[Int]].combine(1.some, 2.some) must be(3.some)
+    }
+
     "allow Order" in {
-      // TODO: add the implicit monoid for Orders in the order companion opject
+      // TODO: add the implicit monoid for Orders in the order companion object
       Monoid[Order].combine(
         orderCosting70,
         orderCosting30
       ) must be(Order(100, 30))
+    }
+
+    "allow the special |+| syntax" in {
+      // TODO: find the right import
+      import cats.syntax.semigroup._
+
+      import cats.instances.string._
+      ("hello" |+| "world") must be("helloworld")
+
+      import cats.syntax.option._
+      import cats.instances.option._
+      ("hello".some |+| "world".some) must be("helloworld".some)
+
+      // Remember that Monoids are Semigroups
+      (orderCosting70 |+| orderCosting30) must be(Order(100, 30))
     }
 
     "allow using orders in a generic way" in {

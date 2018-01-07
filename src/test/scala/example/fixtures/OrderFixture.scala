@@ -1,4 +1,6 @@
-package example
+package example.fixtures
+
+import example.Order
 
 trait OrderFixture {
 
