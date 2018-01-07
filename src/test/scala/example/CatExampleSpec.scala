@@ -2,7 +2,7 @@ package example
 
 import org.scalatest.{MustMatchers, WordSpec}
 
-class CatExampleSpec extends WordSpec with MustMatchers {
+class CatExampleSpec extends WordSpec with MustMatchers with ChatFixture {
 
   import cats.Monoid
 
@@ -14,7 +14,7 @@ class CatExampleSpec extends WordSpec with MustMatchers {
 
       format("a") must be("value=a")
       format(123) must be("value=123")
-      Chat("michin", 3, "black").format must be("name=michin, age=3, color=black")
+      michin.format must be("name=michin, age=3, color=black")
     }
   }
 
@@ -44,16 +44,6 @@ class CatExampleSpec extends WordSpec with MustMatchers {
       import cats.instances.option._
       import cats.syntax.option._
       Calculator.add(List(1.some, 2.some, 3.some, 4.some)) must be(10.some)
-    }
-
-    "work on Monoids of Order" in {
-      val orders = List(
-        Order(2.3, 1),
-        Order(1.7, 1),
-        Order(2.5, 1),
-        Order(3.5, 1)
-      )
-      Calculator.add(orders) must be(Order(10, 4))
     }
 
     "work on Strings" in {

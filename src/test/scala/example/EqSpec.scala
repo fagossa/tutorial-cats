@@ -2,7 +2,7 @@ package example
 
 import org.scalatest.{MustMatchers, WordSpec}
 
-class EqSpec extends WordSpec with MustMatchers {
+class EqSpec extends WordSpec with MustMatchers with ChatFixture {
   import cats.syntax.eq._
   import EqSpecOps._
 
@@ -34,8 +34,6 @@ class EqSpec extends WordSpec with MustMatchers {
 
     "work on Cats" in {
       import cats.syntax.option._
-      val cat1 = Chat("Garfield", 38, "orange and black")
-      val cat2 = Chat("Heathcliff", 33, "orange and black")
 
       import cats.Eq
       Eq[Chat].eqv(cat1, cat2) must_be (false)
