@@ -74,6 +74,25 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
       (orderCosting70 |+| orderCosting30) must be(Order(100, 30))
     }
 
+    "allow append Maps" in {
+      val headers1 = Map(
+        "cache-control" -> "max-age=315360000, public, immutable",
+        "content-encoding" -> "gzip",
+        "content-type" -> "font/woff2"
+      )
+      val headers2 = Map(
+        "date" -> "Sun, 19 Nov 2017 04:02:22 GMT",
+        "last-modified" -> "Thu, 16 Nov 2017 22:27:50 GMT",
+        "server" -> "meinheld/0.6.1"
+      )
+
+      // TODO: find the right imports for string and maps
+      import cats.instances.string._
+      import cats.instances.map._
+      import cats.syntax.semigroup._
+      (headers1 |+| headers2) must be(headers1 ++ headers2)
+    }
+
     "allow using orders in a generic way" in {
       val orders = List(
         Order(2.3, 1),
