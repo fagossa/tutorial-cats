@@ -1,3 +1,24 @@
 language: scala
 scala:
-  - 2.12.4-bin-typelevel-4
+  - 2.12.4
+
+matrix:
+  include:
+    - env: SCALA_VERSION=2.12.4 PUBLISH=1
+      os: linux
+      jdk: oraclejdk8
+      sudo: required
+      services:
+        - docker
+
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.ivy2/cache
+  - $HOME/.sbt
+  - $HOME/.coursier
+  # Pants cache
+  - $HOME/.cache
