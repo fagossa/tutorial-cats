@@ -41,5 +41,6 @@ lazy val scalaCSettings =
     "-target:jvm-1.8",
     "-encoding", "UTF-8",
     "-Xfatal-warnings",
+    "-Ywarn-infer-any",
     "-Ypartial-unification"
   )
