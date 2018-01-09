@@ -1,7 +1,7 @@
 import Dependencies._
 
 shellPrompt := { state =>
-  s"${name.value} > "
+  s"[${name.value}] > "
 }
 
 lazy val root = (project in file("."))
