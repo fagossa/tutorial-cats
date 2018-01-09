@@ -24,14 +24,22 @@ class FunctorSpec extends WordSpec with MustMatchers with OrderFixture {
     }
 
     "allow lifting" in {
-      val func = (x:Int) => x + 1
+      val func = (x: Int) => x + 1
 
       // TODO: find a way to 'lift' func to accept Options using a Functor
-      import cats.instances.function._
+      import cats.instances.option._
       val lifted = Functor[Option].lift(func)
 
       import cats.syntax.option._
       lifted(1.some) must be(2.some)
+    }
+
+    "work on Tree" in {
+      val tree = Branch(Leaf("hello"), Leaf("WoRld"))
+      Functor[Tree].map(tree)(_.toUpperCase) must be(Branch(Leaf("HELLO"), Leaf("WORLD")))
+
+      val tree2 = Branch(Leaf(1), Branch(Leaf(2), Branch(Leaf(3), Leaf(4))))
+      Functor[Tree].map(tree2)(_ + 1) must be(Branch(Leaf(2), Branch(Leaf(3), Branch(Leaf(4), Leaf(5)))))
     }
 
   }
