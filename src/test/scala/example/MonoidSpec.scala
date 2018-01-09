@@ -112,11 +112,13 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
     }
 
     "sum Monoid[Int] in a generic way" in {
+      // TODO: find the correct imports to make this work
       import cats.instances.int._
       Calculator.add(List(1, 2, 3, 4)) must be(10)
     }
 
     "sum Monoid[Option[Int] in a generic way" in {
+      // TODO: find the correct imports to make this work
       import cats.instances.int._
       import cats.instances.option._
       import cats.syntax.option._
