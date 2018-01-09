@@ -13,7 +13,7 @@ Comparing with `Eq` in `CatExampleSpec`
 
 ## TODO `02`
 
-Implement the printable for `Chat` (french for `Cat`) in `EqSpec`
+Implement the printable for `Chat` (french for `Cat`) in `EqSpec`vi 
 
 
 ## TODO `03`
