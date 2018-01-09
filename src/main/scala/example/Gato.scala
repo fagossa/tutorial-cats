@@ -1,16 +1,16 @@
 package example
 
-final case class Chat(name: String, age: Int, color: String)
+final case class Gato(name: String, age: Int, color: String)
 
-object Chat {
+object Gato {
   import cats.Eq
   import cats.syntax.eq._
   import cats.instances.string._
   import cats.instances.int._
 
-  // TODO: define equality
-  implicit val catEquality = new Eq[Chat] {
-    def eqv(x: Chat, y: Chat): Boolean = {
+  // TODO 01: define equality for Gato
+  implicit val catEquality = new Eq[Gato] {
+    def eqv(x: Gato, y: Gato): Boolean = {
       (x.name === y.name) &&
       (x.age === y.age) &&
       (x.color === y.color)
@@ -18,7 +18,7 @@ object Chat {
   }
 
   // This function is here is only to avoid the clash with scalatest!
-  // TODO: use the function '===' to compare cats
-  def isEqual(first: Chat, second: Chat) =
+  // TODO 01: use the function '===' to compare cats
+  def isEqual(first: Gato, second: Gato) =
     first === second
 }
