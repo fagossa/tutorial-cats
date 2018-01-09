@@ -9,7 +9,7 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
 
   "Monoid" must {
 
-    "allow Int" in {
+    "work on Int" in {
       // TODO: add the import for 'int' monoids
       import cats.instances.int._
 
@@ -23,7 +23,7 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
       ) must be(15)
     }
 
-    "allow Strings" in {
+    "work on Strings" in {
       // TODO: add the import for 'string' monoids
       import cats.instances.string._
       Monoid[String].combine("hello", "world") must be("helloworld")
@@ -42,16 +42,14 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
         .combineAllOption(List.empty[String]) must be(none[String])
     }
 
-    "allow Option[Int]" in {
-      // TODO: find the correct imports to make this work
-      import cats.syntax.option._
-      import cats.instances.int._
-      import cats.instances.option._
-
-      Monoid[Option[Int]].combine(1.some, 2.some) must be(3.some)
+    "work on Boolean" in {
+      import BooleanMonoidInstances._
+      // TODO: implement ANDMonoid, ORMonoid
+      Monoidal(ANDMonoid).combine(true, true) must be(true)
+      Monoidal(ORMonoid).combine(false, true) must be(true)
     }
 
-    "allow Order" in {
+    "work on Order" in {
       // TODO: add the implicit monoid for Orders in the order companion object
       Monoid[Order].combine(
         orderCosting70,
@@ -74,7 +72,7 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
       (orderCosting70 |+| orderCosting30) must be(Order(100, 30))
     }
 
-    "allow append Maps" in {
+    "work on Map[T]" in {
       val headers1 = Map(
         "cache-control" -> "max-age=315360000, public, immutable",
         "content-encoding" -> "gzip",
@@ -93,7 +91,16 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
       (headers1 |+| headers2) must be(headers1 ++ headers2)
     }
 
-    "allow using orders in a generic way" in {
+    "work on Option[Int]" in {
+      // TODO: find the correct imports to make this work
+      import cats.syntax.option._
+      import cats.instances.int._
+      import cats.instances.option._
+
+      Monoid[Option[Int]].combine(1.some, 2.some) must be(3.some)
+    }
+
+    "sum Monoid[Order] in a generic way" in {
       val orders = List(
         Order(2.3, 1),
         Order(1.7, 1),
@@ -102,6 +109,18 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
       )
       // TODO: implement the generic add
       Calculator.add(orders) must be(Order(10, 4))
+    }
+
+    "sum Monoid[Int] in a generic way" in {
+      import cats.instances.int._
+      Calculator.add(List(1, 2, 3, 4)) must be(10)
+    }
+
+    "sum Monoid[Option[Int] in a generic way" in {
+      import cats.instances.int._
+      import cats.instances.option._
+      import cats.syntax.option._
+      Calculator.add(List(1.some, 2.some, 3.some, 4.some)) must be(10.some)
     }
 
   }

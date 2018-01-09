@@ -30,32 +30,4 @@ class CatExampleSpec extends WordSpec with MustMatchers with ChatFixture {
 
   }
 
-  "Monoidal" must {
-
-    "work on booleans" in {
-      import BooleanMonoidInstances._
-      Monoidal(ANDMonoid).combine(true, true) must be(true)
-      Monoidal(ORMonoid).combine(false, true) must be(true)
-    }
-
-    "work on Monoids for Option" in {
-      import cats.instances.int._
-      Calculator.add(List(1, 2, 3, 4)) must be(10)
-
-      import cats.instances.option._
-      import cats.syntax.option._
-      Calculator.add(List(1.some, 2.some, 3.some, 4.some)) must be(10.some)
-    }
-
-    "work on Strings" in {
-      import cats.instances.string._
-      import cats.syntax.semigroup._
-
-      val stringResult = "Hello" |+| "World" |+| Monoid[String].empty
-      stringResult must be("HelloWorld")
-
-    }
-
-  }
-
 }
