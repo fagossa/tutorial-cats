@@ -100,29 +100,34 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
       Monoid[Option[Int]].combine(1.some, 2.some) must be(3.some)
     }
 
-    "sum Monoid[Order] in a generic way" in {
-      val orders = List(
-        Order(2.3, 1),
-        Order(1.7, 1),
-        Order(2.5, 1),
-        Order(3.5, 1)
-      )
-      // TODO: implement the generic add
-      Calculator.add(orders) must be(Order(10, 4))
-    }
+    "sum Monoid[T] in a generic way" which {
 
-    "sum Monoid[Int] in a generic way" in {
-      // TODO: find the correct imports to make this work
-      import cats.instances.int._
-      Calculator.add(List(1, 2, 3, 4)) must be(10)
-    }
+      // TODO: implement the generic Calculator.add that work on Monoid[T]
 
-    "sum Monoid[Option[Int] in a generic way" in {
-      // TODO: find the correct imports to make this work
-      import cats.instances.int._
-      import cats.instances.option._
-      import cats.syntax.option._
-      Calculator.add(List(1.some, 2.some, 3.some, 4.some)) must be(10.some)
+      "uses Monoid[Int]" in {
+        // TODO: find the correct imports to make this work
+        import cats.instances.int._
+        Calculator.add(List(1, 2, 3, 4)) must be(10)
+      }
+
+      "uses Monoid[Option[Int]" in {
+        // TODO: find the correct imports to make this work
+        import cats.instances.int._
+        import cats.instances.option._
+        import cats.syntax.option._
+        Calculator.add(List(1.some, 2.some, 3.some, 4.some)) must be(10.some)
+      }
+
+      "uses Monoid[Order]" in {
+        val orders = List(
+          Order(2.3, 1),
+          Order(1.7, 1),
+          Order(2.5, 1),
+          Order(3.5, 1)
+        )
+        Calculator.add(orders) must be(Order(10, 4))
+      }
+
     }
 
   }

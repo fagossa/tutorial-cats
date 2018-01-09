@@ -16,14 +16,3 @@ object Order {
   }
 
 }
-
-object Calculator {
-
-  import cats.Monoid
-
-  // TODO: implement the generic add on any monoid
-  def add[A](items: List[A])(implicit m: Monoid[A]): A = {
-    import cats.syntax.semigroup._
-    items.foldLeft(Monoid[A].empty)(_ |+| _)
-  }
-}
