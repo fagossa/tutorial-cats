@@ -18,7 +18,15 @@ Implement the printable for `Chat` (french for `Cat`) in `EqSpec`vi
 
 ## TODO `03`
 
-Playing with Monoids in `MonoidsSpec`
+Playing with Monoids in `MonoidSpec`
+
+> Monoids can `combine` two elements of the same type and have an `empty` element
+
+## TODO `04`
+
+Playing with Functors in `FunctorSpec`
+
+> Functors can `map` over something
 
 -----
 
