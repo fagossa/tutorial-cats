@@ -3,12 +3,11 @@ package example
 import example.fixtures.ChatFixture
 import org.scalatest.{MustMatchers, WordSpec}
 
-class CatExampleSpec extends WordSpec with MustMatchers with ChatFixture {
-
-  import cats.Monoid
+class PrintableSpec extends WordSpec with MustMatchers with ChatFixture {
 
   "Printable" must {
     "allow a printable" in {
+      // TODO 02: import the Printable objects to make this work
       import Printable._
       import PrintableInstances._
       import PrintableSyntax._
@@ -22,6 +21,7 @@ class CatExampleSpec extends WordSpec with MustMatchers with ChatFixture {
   "Semigroupal" must {
 
     "work on options" in {
+      // TODO 02: ???
       import cats.Semigroupal
       import cats.instances.option._
       import cats.syntax.option._

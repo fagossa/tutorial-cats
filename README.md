@@ -8,12 +8,12 @@ The exercises
 
 ## TODO `01`
 
-Comparing with `Eq` in `CatExampleSpec`
+Comparing with `Eq` in `EqSpec`
 
 
 ## TODO `02`
 
-Implement the printable for `Chat` (french for `Cat`) in `EqSpec`vi 
+Implement the printable for `Chat` (french for `Cat`) in `PrintableSpec`vi 
 
 
 ## TODO `03`
