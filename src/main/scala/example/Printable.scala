@@ -6,7 +6,7 @@ trait Printable[A] {
   // TODO 04: implement the contramap function
   // The 'contramap' allow to prepend a transformation before an operation
   def contramap[B](f: B => A): Printable[B] =
-    b => format(f(b))
+    (b: B) => format(f(b))
 }
 
 object PrintableInstances {
