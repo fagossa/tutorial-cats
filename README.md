@@ -28,6 +28,12 @@ Playing with Functors in `FunctorSpec`
 
 > Functors can `map` over something
 
+## TODO `06`
+
+Solving equations with `StateSpec`
+
+> State Monad cumulates values
+
 -----
 
 ## Last man standing

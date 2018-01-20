@@ -24,6 +24,15 @@ class StateSpec extends WordSpec with MustMatchers {
         } yield ans).runA(Nil).value must be(3)
       }
 
+      "must handle the '-' operator" in {
+        // TODO 06: implement this function
+        (for {
+          _ <- evalOne("2")
+          _ <- evalOne("1")
+          ans <- evalOne("-")
+        } yield ans).runA(Nil).value must be(-1)
+      }
+
       "must handle the '*' operator" in {
         // TODO 06: implement this function
         (for {
@@ -31,6 +40,15 @@ class StateSpec extends WordSpec with MustMatchers {
           _ <- evalOne("5")
           ans <- evalOne("*")
         } yield ans).runA(Nil).value must be(15)
+      }
+
+      "must handle the '/' operator" in {
+        // TODO 06: implement this function
+        (for {
+          _ <- evalOne("5")
+          _ <- evalOne("15")
+          ans <- evalOne("/")
+        } yield ans).runA(Nil).value must be(3)
       }
 
       "accumulate multiple values" in {

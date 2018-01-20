@@ -11,9 +11,10 @@ object ReversePolishNotation {
    *
    * For example, you can create instances of state with the following structure:
    *
-   * State[String, String] { originalString =>
+   * val s = State[String, String] { originalString =>
    *   (originalString, originalString.toUpperCase)
    * }
+   * s.runA("hello").value === "HELLO"
    *
    * */
 
@@ -28,6 +29,9 @@ object ReversePolishNotation {
    *   pop the last two symbols
    *   execute the operation
    *   stack the result
+   *
+   * Note: for simplicity do not implement any error handling!
+   *
    */
   def evalOne(sym: String): CalcState[Int] = {
     sym match {
@@ -48,10 +52,11 @@ object ReversePolishNotation {
         sys.error("Fail!")
     }
 
-  private def operand(num: Int): CalcState[Int] =
-    State[List[Int], Int] { stack =>
-      (num :: stack, num)
+  private def operand(i: Int): CalcState[Int] = {
+    State[List[Int], Int] { e =>
+      (i :: e, i)
     }
+  }
 
   /*
    * Fold over the list calling evalOne
