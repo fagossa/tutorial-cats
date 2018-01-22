@@ -34,6 +34,13 @@ Solving equations with `StateSpec`
 
 > State Monad cumulates values
 
+## TODO `07`
+
+Validating Users with `ValidationSpec`
+
+> Validation Monad and Either Monad handle errors
+
+
 -----
 
 ## Last man standing
