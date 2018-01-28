@@ -1,6 +1,5 @@
 package example
 
-import cats.Semigroupal
 import cats.data.Validated
 
 case class User(name: String, age: Int)
