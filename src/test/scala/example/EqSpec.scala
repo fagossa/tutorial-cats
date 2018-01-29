@@ -1,9 +1,9 @@
 package example
 
-import example.fixtures.ChatFixture
+import example.fixtures.GatoFixture
 import org.scalatest.{MustMatchers, WordSpec}
 
-class EqSpec extends WordSpec with MustMatchers with ChatFixture {
+class EqSpec extends WordSpec with MustMatchers with GatoFixture {
   import cats.syntax.eq._
   import EqSpecOps._
 
@@ -33,14 +33,14 @@ class EqSpec extends WordSpec with MustMatchers with ChatFixture {
       // (Option(123) =!= Option.empty[Int]) must_be (true) // Clash with scalatest :(
     }
 
-    "work on Cats" in {
+    "work on Gatos" in {
       import cats.syntax.option._
 
       import cats.Eq
-      Eq[Chat].eqv(cat1, cat2) must_be (false)
-      (cat1.some === none[Chat]) must_be (false)
+      Eq[Gato].eqv(cat1, cat2) must_be (false)
+      (cat1.some === none[Gato]) must_be (false)
 
-      Chat.isEqual(cat1, cat2) must_be (false)
+      Gato.isEqual(cat1, cat2) must_be (false)
     }
 
   }

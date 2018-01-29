@@ -27,8 +27,8 @@ object PrintableInstances {
   }
 
   // TODO 02: define a printable of 'Chat'
-  implicit val printableCat = new Printable[Chat] {
-    def format(a: Chat): String =
+  implicit val printableCat = new Printable[Gato] {
+    def format(a: Gato): String =
       s"name=${a.name}, age=${a.age}, color=${a.color}"
   }
 

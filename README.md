@@ -13,8 +13,12 @@ Comparing with `Eq` in `EqSpec`
 
 ## TODO `02`
 
-Implement the printable for `Chat` (french for `Cat`) in `PrintableSpec`vi 
+Implement the printable for `Gato` (spanish for `Cat`) in `PrintableSpec`
 
+`cats` usually split `typeclasses` in the following way:
+* A trait defining the general behavior
+* A companion object that contains the type classes
+* A syntax object containing `implicit class`es
 
 ## TODO `03`
 

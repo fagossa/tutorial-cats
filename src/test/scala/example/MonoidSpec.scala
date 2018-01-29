@@ -134,4 +134,16 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
 
   }
 
+  "Semigroupal" must {
+
+    "work on options" in {
+      // TODO 03: a little bit off topic. Find the correct imports to make this code work
+      import cats.Semigroupal
+      import cats.instances.option._
+      import cats.syntax.option._
+      Semigroupal[Option].product(1.some, 2.some) must be((1, 2).some)
+    }
+
+  }
+
 }
