@@ -10,6 +10,7 @@ class EqSpec extends WordSpec with MustMatchers with GatoFixture {
   "Eq" must {
 
     "work on Ints" in {
+      // TODO 01: find the right import
       import cats.Eq
       import cats.instances.int._
 
@@ -22,6 +23,7 @@ class EqSpec extends WordSpec with MustMatchers with GatoFixture {
     }
 
     "work on Options" in {
+      // TODO 01: find the right import
       import cats.instances.option._
       // comparing options
       (Option(123) === Option(123)) must_be (true)
@@ -37,6 +39,7 @@ class EqSpec extends WordSpec with MustMatchers with GatoFixture {
       import cats.syntax.option._
 
       import cats.Eq
+      // TODO 01: Equiality should work between cats
       Eq[Gato].eqv(cat1, cat2) must_be (false)
       (cat1.some === none[Gato]) must_be (false)
 

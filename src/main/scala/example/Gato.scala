@@ -8,7 +8,7 @@ object Gato {
   import cats.instances.string._
   import cats.instances.int._
 
-  // TODO: define equality
+  // TODO 01: define equality for Gato
   implicit val catEquality = new Eq[Gato] {
     def eqv(x: Gato, y: Gato): Boolean = {
       (x.name === y.name) &&
@@ -18,7 +18,7 @@ object Gato {
   }
 
   // This function is here is only to avoid the clash with scalatest!
-  // TODO: use the function '===' to compare cats
+  // TODO 01: use the function '===' to compare cats
   def isEqual(first: Gato, second: Gato) =
     first === second
 }
