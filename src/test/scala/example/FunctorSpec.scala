@@ -49,10 +49,13 @@ class FunctorSpec extends WordSpec with MustMatchers with OrderFixture {
     "allow creation on existing Printables" in {
       // TODO 04: Now it is time to use out function 'contramap' defined in 'Printable'
       import Printable._
+      /*
       import PrintableInstances._
       format(Box(1)) must be("value=1")
       import PrintableSyntax._
       Box("hello").format must be("value=hello")
+       */
+      fail("WIP")
     }
   }
 

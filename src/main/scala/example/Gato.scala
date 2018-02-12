@@ -10,11 +10,7 @@ object Gato {
 
   // TODO 01: define equality for Gato
   implicit val catEquality = new Eq[Gato] {
-    def eqv(x: Gato, y: Gato): Boolean = {
-      (x.name === y.name) &&
-      (x.age === y.age) &&
-      (x.color === y.color)
-    }
+    override def eqv(x: Gato, y: Gato): Boolean = ???
   }
 
   // This function is here is only to avoid the clash with scalatest!

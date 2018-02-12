@@ -12,37 +12,27 @@ trait Printable[A] {
 object PrintableInstances {
 
   // TODO 02: define a printable of 'String'
-  implicit val printableString = new Printable[String] {
-    def format(a: String): String = s"value=$a"
-  }
+  //implicit val printableString = ???
 
   // TODO 02: define a printable of 'Int'
-  implicit val printableInt = new Printable[Int] {
-    def format(a: Int): String = s"value=${a.toString}"
-  }
+  //implicit val printableInt = ???
 
   // TODO 04: define a printable of 'Boolean'
-  implicit val printableBoolean = new Printable[Boolean] {
-    def format(a: Boolean): String = if (a) "yes" else "no"
-  }
+  //implicit val printableBoolean = ???
 
-  // TODO 02: define a printable of 'Chat'
-  implicit val printableCat = new Printable[Gato] {
-    def format(a: Gato): String =
-      s"name=${a.name}, age=${a.age}, color=${a.color}"
-  }
+  // TODO 02: define a printable of 'Gato'
+  //implicit val printableCat = ???
 
 }
 
 object Printable {
-  // TODO 02: complete the format function to accept an implicit printable
-  def format[A](a: A)(implicit p: Printable[A]): String =
-    p.format(a)
+  // TODO 02: complete the format function to accept an implicit printable to format a
+  def format[A](a: A) = ???
 }
 
 object PrintableSyntax {
   // TODO 02: define a class PrintableOps[A] to add 'format' to 'A'
   implicit class PrintableOps[A](a: A) {
-    def format(implicit p: Printable[A]): String = p.format(a)
+    // def format(...) = p.format(a)
   }
 }
