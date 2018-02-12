@@ -6,35 +6,36 @@ Tutorial cats
 
 The exercises
 
-## TODO `01`
+## TODO `01` - `EqSpec`
 
-Comparing with `Eq` in `EqSpec`
+Comparing with `Eq`, `===` and `=!=`
 
 
-## TODO `02`
+## TODO `02` - `PrintableSpec`
 
-Implement the printable for `Gato` (spanish for `Cat`) in `PrintableSpec`
+Implement the printable for `Gato` (spanish for `Cat`)
 
 `cats` usually split `typeclasses` in the following way:
 * A trait defining the general behavior
 * A companion object that contains the type classes
 * A syntax object containing `implicit class`es
 
-## TODO `03`
 
-Playing with Monoids in `MonoidSpec`
+## TODO `03` - `MonoidSpec`
 
-> Monoids can `combine` two elements of the same type and have an `empty` element
+Monoids can `combine` two elements of the same type (thanks to `semigroup`) and have an `empty` element
 
-## TODO `04`
 
-Playing with Functors in `FunctorSpec`
+## TODO `04` - `FunctorSpec`
 
-> Functors can `map` over something
+Playing with Functors in 
 
-## TODO `05`
+Functors can `map` over something
 
-Handling additional information in `WriteAndReadSpec`
+
+## TODO `05` - `WriteAndReadSpec`
+
+Handling additional information to the main logic flow.
 
 Note:
 - This alias could be a good idea: `type Logged[A] = Writer[Vector[String], A]`
@@ -45,22 +46,21 @@ Note:
 > Read monad expects contextual information
 
 
-## TODO `06`
+## TODO `06` - `StateSpec`
 
-Solving equations with `StateSpec`
+Solving equations
 
 > State Monad cumulates values
 
-## TODO `07`
 
-Validating Users with `ValidationSpec`
+## TODO `07` - `ValidationSpec`
 
 > Validation Monad and Either Monad handle errors
 
 
 -----
 
-## Last man standing
+## Problems?
 
 If you are really, really, really having problems finding the right imports just include the following
 

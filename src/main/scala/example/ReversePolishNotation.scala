@@ -21,6 +21,7 @@ object ReversePolishNotation {
   type CalcState[A] = State[List[Int], A]
 
   /*
+   * TODO 06
    * This function must support the symbols {+,-,*,/}
    *
    * If the symbol is a number
@@ -59,9 +60,9 @@ object ReversePolishNotation {
   }
 
   /*
-   * Fold over the list calling evalOne
+   * TODO 06: Fold over the list calling evalOne
    *
-   * Your empty element could be calculated like this:
+   * Your empty element could be calculated like the 'pure state 0':
    * import cats.syntax.applicative._
    * 0.pure[CalcState]
    */

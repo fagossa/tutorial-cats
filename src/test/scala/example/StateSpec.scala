@@ -11,12 +11,12 @@ class StateSpec extends WordSpec with MustMatchers {
       import ReversePolishNotation._
 
       "support simple values" in {
-        // TODO 06: implement this function
+        // TODO 06: make this test pass
         evalOne("42").runA(Nil).value must be(42)
       }
 
       "must handle the '+' operator" in {
-        // TODO 06: implement this function
+        // TODO 06: make this test pass
         (for {
           _ <- evalOne("1")
           _ <- evalOne("2")
@@ -25,7 +25,7 @@ class StateSpec extends WordSpec with MustMatchers {
       }
 
       "must handle the '-' operator" in {
-        // TODO 06: implement this function
+        // TODO 06: make this test pass
         (for {
           _ <- evalOne("2")
           _ <- evalOne("1")
@@ -34,7 +34,7 @@ class StateSpec extends WordSpec with MustMatchers {
       }
 
       "must handle the '*' operator" in {
-        // TODO 06: implement this function
+        // TODO 06: make this test pass
         (for {
           _ <- evalOne("3")
           _ <- evalOne("5")
@@ -43,7 +43,7 @@ class StateSpec extends WordSpec with MustMatchers {
       }
 
       "must handle the '/' operator" in {
-        // TODO 06: implement this function
+        // TODO 06: make this test pass
         (for {
           _ <- evalOne("5")
           _ <- evalOne("15")
@@ -52,7 +52,7 @@ class StateSpec extends WordSpec with MustMatchers {
       }
 
       "accumulate multiple values" in {
-        // TODO 06: implement this function
+        // TODO 06: make this test pass
         evalAll(List("1", "2", "+", "3", "*")).runA(Nil).value must be(9)
       }
     }
