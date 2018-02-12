@@ -7,15 +7,17 @@ object Monoidal {
 }
 
 object BooleanMonoidInstances {
+
+  // TODO 03: implement ORMonoid
   val ANDMonoid = new Monoid[Boolean] {
     def empty = true
     def combine(x: Boolean, y: Boolean) = x && y
   }
 
+  // TODO 03: implement ORMonoid
   val ORMonoid = new Monoid[Boolean] {
     def empty = true
     def combine(x: Boolean, y: Boolean) = x || y
   }
 
-  // others
 }
