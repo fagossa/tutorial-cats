@@ -58,11 +58,6 @@ Functors can `map` over something
 
 Handling additional information to the main logic flow.
 
-Note:
-- This alias could be a good idea: `type Logged[A] = Writer[Vector[String], A]`
-- Now, magic happens: `1.pure[Logged]`
-- Anyways, this way also works: `1.writer(Vector.empty[String])`
-
 > Write monad add additional information
 > Read monad expects contextual information
 

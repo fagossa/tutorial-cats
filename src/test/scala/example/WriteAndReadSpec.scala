@@ -16,12 +16,13 @@ class WriteAndReadSpec extends WordSpec with MustMatchers with ScalaFutures {
 
     "return an Int value" in {
       // TODO 05: make this test pass
-      NumericOperations.factorial(5).run._2 must be(120)
+      /*NumericOperations.factorial(5).run._2 must be(120)*/
+      fail("WIP")
     }
 
     "return Ints and the different steps of the recursion" in {
-      // TODO 05: refactor this test to use the writer monad
-      val eventualVector: Vector[(Vector[String], Int)] = Future
+      // TODO 05: make this test pass
+      /*val eventualVector: Vector[(Vector[String], Int)] = Future
         .sequence(
           Vector(
             Future(NumericOperations.factorial(3).run),
@@ -35,7 +36,7 @@ class WriteAndReadSpec extends WordSpec with MustMatchers with ScalaFutures {
           (Vector("fact(0)", "fact(1)", "fact(2)", "fact(3)"), 6),
           (Vector("fact(0)", "fact(1)", "fact(2)", "fact(3)", "fact(4)"), 24)
         )
-      )
+      )*/
     }
 
   }

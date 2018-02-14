@@ -4,8 +4,13 @@ import cats.data.Writer
 
 object NumericOperations {
 
-  // TODO 05: Implement the alias
-  type Logged[A] = Writer[Vector[String], A]
+  /*
+    Note:
+    - This alias could be a good idea: `type Logged[A] = Writer[Vector[String], A]`
+    - Now, magic happens: `1.pure[Logged]`
+    - Anyways, this way also works: `1.writer(Vector.empty[String])`
+    - x.mapWriten(x => x) :3
+   */
 
   def slowly[A](body: => A): A =
     try body
@@ -20,21 +25,12 @@ object NumericOperations {
    * - You should return a Vector[String] containing each step
    * - remember to 'map' the value to write ;)
    */
-  /*
   def factorial(n: Int): Int = {
     val ans: Int = slowly {
       if (n == 0) 1 else n * factorial(n - 1)
     }
     println(s"fact $n $ans")
     ans
-  }
-   */
-  def factorial(n: Int): Logged[Int] = {
-    val ans = slowly {
-      if (n == 0) 1.pure[Logged]
-      else factorial(n - 1).map(value => n * value)
-    }
-    ans.mapWritten(_ :+ s"fact($n)")
   }
 
 }
