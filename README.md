@@ -3,6 +3,13 @@ Tutorial cats
 
 Your job is to make all the test *green*!.
 
+Notice that:
+
+> Cats implicits for a given type follow this convention `import cats.instances.mytype._`
+
+> Cats syntax for a given type follow this convention `import cats.syntax.atype._`
+
+
 ## TODO `01` - `Eq`
 
 Comparing with `Eq`, `===` and `=!=`
@@ -29,10 +36,6 @@ Implement the printable for `Gato` (spanish for `Cat`)
 ## TODO `03` - `Monoid`
 
 Monoids can `combine` two elements of the same type (thanks to `semigroup`) and have an `empty` element
-
-> Cats implicits for a given type follow this convention `import cats.instances.mytype._`
-
-> Cats syntax for a given type follow this convention `import cats.syntax.atype._`
 
 > `|+|` is an alias for `combine` present in semigroup
 
