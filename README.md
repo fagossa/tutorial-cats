@@ -10,6 +10,10 @@ The exercises
 
 Comparing with `Eq`, `===` and `=!=`
 
+```
+~testOnly example.EqSpec
+```
+
 
 ## TODO `02` - `PrintableSpec`
 
@@ -20,17 +24,32 @@ Implement the printable for `Gato` (spanish for `Cat`)
 * A companion object that contains the type classes
 * A syntax object containing `implicit class`es
 
+```
+~testOnly example.PrintableSpec
+```
+
 
 ## TODO `03` - `MonoidSpec`
 
 Monoids can `combine` two elements of the same type (thanks to `semigroup`) and have an `empty` element
 
+> Cats implicits for a given type follow this convention `import cats.instances.mytype._`
+> Cats syntax for a given type follow this convention `import cats.syntax.atype._`
+> `|+|` is an alias for `combine` present in semigroup
+
+```
+~testOnly example.MonoidSpec
+```
 
 ## TODO `04` - `FunctorSpec`
 
 Playing with Functors in 
 
 Functors can `map` over something
+
+```
+~testOnly example.FunctorSpec
+```
 
 
 ## TODO `05` - `WriteAndReadSpec`
@@ -45,6 +64,10 @@ Note:
 > Write monad add additional information
 > Read monad expects contextual information
 
+```
+~testOnly example.WriteAndReadSpec
+```
+
 
 ## TODO `06` - `StateSpec`
 
@@ -52,15 +75,22 @@ Solving equations
 
 > State Monad cumulates values
 
+```
+~testOnly example.StateSpec
+```
+
 
 ## TODO `07` - `ValidationSpec`
 
 > Validation Monad and Either Monad handle errors
 
+```
+~testOnly example.ValidationSpec
+```
 
 -----
 
-## Problems?
+# Problems?
 
 If you are really, really, really having problems finding the right imports just include the following
 
