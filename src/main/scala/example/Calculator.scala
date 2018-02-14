@@ -9,9 +9,10 @@ object Calculator {
    * Note:
    * - accept a List of T
    * - accept an implicit monoid of T
+   * - fold over the list
+   * - combine the different T using |+|
    */
   def add[T](items: List[T])(implicit m: Monoid[T]): T = {
-    import cats.syntax.semigroup._
-    items.foldLeft(Monoid[T].empty)(_ |+| _)
+    ???
   }
 }
