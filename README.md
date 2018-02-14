@@ -1,12 +1,9 @@
 Tutorial cats
 ======
 
-[![Build Status](https://travis-ci.org/fagossa/tutorial-cats.svg?branch=solution)](https://travis-ci.org/fagossa/tutorial-cats)
+Your job is to make all the test *green*!.
 
-
-The exercises
-
-## TODO `01` - `EqSpec`
+## TODO `01` - `Eq`
 
 Comparing with `Eq`, `===` and `=!=`
 
@@ -15,7 +12,7 @@ Comparing with `Eq`, `===` and `=!=`
 ```
 
 
-## TODO `02` - `PrintableSpec`
+## TODO `02` - `Printable`
 
 Implement the printable for `Gato` (spanish for `Cat`)
 
@@ -29,19 +26,21 @@ Implement the printable for `Gato` (spanish for `Cat`)
 ```
 
 
-## TODO `03` - `MonoidSpec`
+## TODO `03` - `Monoid`
 
 Monoids can `combine` two elements of the same type (thanks to `semigroup`) and have an `empty` element
 
 > Cats implicits for a given type follow this convention `import cats.instances.mytype._`
+
 > Cats syntax for a given type follow this convention `import cats.syntax.atype._`
+
 > `|+|` is an alias for `combine` present in semigroup
 
 ```
 ~testOnly example.MonoidSpec
 ```
 
-## TODO `04` - `FunctorSpec`
+## TODO `04` - `Functor`
 
 Playing with Functors in 
 
@@ -52,7 +51,7 @@ Functors can `map` over something
 ```
 
 
-## TODO `05` - `WriteAndReadSpec`
+## TODO `05` - `Write and Read`
 
 Handling additional information to the main logic flow.
 
@@ -69,7 +68,7 @@ Note:
 ```
 
 
-## TODO `06` - `StateSpec`
+## TODO `06` - `State`
 
 Solving equations
 
@@ -80,7 +79,7 @@ Solving equations
 ```
 
 
-## TODO `07` - `ValidationSpec`
+## TODO `07` - `Validation`
 
 > Validation Monad and Either Monad handle errors
 
