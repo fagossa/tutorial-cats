@@ -34,11 +34,7 @@ object UserValidation {
    * - create a tuple with the results
    * - call mapN on the tuple to build an instance of User (e.g. using apply)
    */
-  def validateUser(params: FormData): Validated[List[String], User] =
-    (
-      readName(params).toValidated,
-      readAge(params).toValidated
-    ).mapN(User.apply)
+  def validateUser(params: FormData): Validated[List[String], User] = ???
 
   /*
    * TODO 07: implement this function
@@ -46,11 +42,7 @@ object UserValidation {
    * - call getValue
    * - vall nonBlank
    */
-  def readName(params: FormData): ErrorOr[String] =
-    for {
-      value <- getValue("name")(params)
-      result <- nonBlank("name")(value)
-    } yield result
+  def readName(params: FormData): ErrorOr[String] = ???
 
   /*
    * TODO 07: implement this function
@@ -60,37 +52,11 @@ object UserValidation {
    * - call parseInt
    * - call nonNegative
    */
-  def readAge(params: FormData): ErrorOr[Int] =
-    for {
-      value <- getValue("age")(params)
-      nb <- nonBlank("age")(value)
-      age <- parseInt("age")(nb)
-      result <- nonNegative(age)
-    } yield result
+  def readAge(params: FormData): ErrorOr[Int] = ???
 
   /*
    * TODO 07: implement this function
    */
-  private def getValue(name: String)(data: FormData): ErrorOr[String] =
-    data
-      .get(name)
-      .toRight(List(s"$name is not present"))
-
-  private def parseInt(name: String)(data: String): ErrorOr[Int] =
-    Either
-      .catchOnly[NumberFormatException](data.toInt)
-      .leftMap(_ => List(s"$name must be an integer"))
-
-  private def nonBlank(name: String)(data: String): ErrorOr[String] =
-    data
-      .asRight[List[String]]
-      .ensure(List(s"$name is blank"))(_.nonEmpty)
-
-  private def nonNegative(data: Int): ErrorOr[Int] =
-    Either.cond(
-      data >= 0,
-      data,
-      List("Negative value")
-    )
+  private def getValue(name: String)(data: FormData): ErrorOr[String] = ???
 
 }
