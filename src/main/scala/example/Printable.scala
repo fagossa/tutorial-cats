@@ -11,11 +11,11 @@ trait Printable[A] {
 
 object PrintableInstances {
 
-  // TODO 02: define a printable of 'String'
-  //implicit val printableString = ???
-
   // TODO 02: define a printable of 'Int'
   //implicit val printableInt = ???
+
+  // TODO 02: define a printable of 'String'
+  //implicit val printableString = ???
 
   // TODO 04: define a printable of 'Boolean'
   //implicit val printableBoolean = ???
