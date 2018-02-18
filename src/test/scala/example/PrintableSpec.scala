@@ -23,7 +23,7 @@ class PrintableSpec extends WordSpec with MustMatchers with GatoFixture {
     }
 
     "allow a printable" in {
-      // TODO 02: import the Printable objects to make this work
+      // TODO 02: Implement the printable syntax to make this work
       import PrintableInstances._
       import PrintableSyntax._
 
