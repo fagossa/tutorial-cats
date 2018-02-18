@@ -5,9 +5,8 @@ final case class Box[A](value: A)
 object Box {
 
   /* TODO 04:
-   * define an implicit conversion that uses an implicit Printable[A] to
-   * delegate the print with a 'contramap[Box[A]]'
+   * define an implicit conversion that receives an implicit Printable[A] to
+   * transform a Box[A] into an A using Printable.contramap
    */
-  implicit def printableBox[A](implicit p: Printable[A]) =
-    ???
+  //implicit def printableBox[A](...) = ???
 }
