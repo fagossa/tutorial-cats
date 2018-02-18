@@ -155,6 +155,7 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
       import cats.Semigroupal
       Semigroupal[Option].product(1.some, 2.some) must be((1, 2).some)
      */
+      fail("WIP")
     }
 
   }
