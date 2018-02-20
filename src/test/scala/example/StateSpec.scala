@@ -56,6 +56,18 @@ class StateSpec extends WordSpec with MustMatchers {
         fail("WIP")
       }
 
+      "must handle multiple '+'" in {
+        // TODO 06: make this test pass
+        /*(for {
+          _ <- evalOne("1")
+          _ <- evalOne("1")
+          _ <- evalOne("+")
+          _ <- evalOne("1")
+          ans <- evalOne("+")
+        } yield ans).runA(Nil).value must be(3)*/
+        fail("WIP")
+      }
+
       "accumulate multiple values" in {
         // TODO 06: make this test pass
         /*evalAll(List("1", "2", "+", "3", "*")).runA(Nil).value must be(9)*/
