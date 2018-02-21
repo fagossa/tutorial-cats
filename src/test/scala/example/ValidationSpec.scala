@@ -83,6 +83,13 @@ class ValidationSpec extends WordSpec with MustMatchers {
         fail("WIP")
       }
 
+      "handle multiple errors" in {
+        // TODO 07: make this test pass
+       /* val params = Map.empty[String, String]
+        validateUser(params) must be(List("name is not present", "age is not present").invalid[List[String]])*/
+        fail("WIP")
+      }
+
     }
   }
 
