@@ -44,7 +44,7 @@ object UserValidation {
    * TODO 07: implement this function
    * Note:
    * - call getValue
-   * - vall nonBlank
+   * - call nonBlank
    */
   def readName(params: FormData): ErrorOr[String] =
     for {
