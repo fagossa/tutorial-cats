@@ -11,13 +11,11 @@ class EqSpec extends WordSpec with MustMatchers with GatoFixture {
 
     "work on Ints" in {
       // TODO 01: find the right import
-      /*
-      val eqInt = Eq[Int]
-      eqInt.eqv(123, 123) must_be (true)
-      eqInt.eqv(123, 321) must_be (false)
+      /*val eqInt = Eq[Int]
+      eqInt.eqv(123, 123) `must be` (true)
+      eqInt.eqv(123, 321) `must be` (false)
 
-      (123 =!= 321) must_be (true)
-       */
+      (123 =!= 321) `must be` (true)*/
       fail("WIP")
     }
 
@@ -25,9 +23,9 @@ class EqSpec extends WordSpec with MustMatchers with GatoFixture {
       // TODO 01: find the right import
       /*
       // comparing options
-      (Option(123) === Option(123)) must_be (true)
+      (Option(123) === Option(123)) `must be` (true)
 
-      (123.some === 123.some) must_be (true)
+      (123.some === 123.some) `must be` (true)
        */
       fail("WIP")
     }
@@ -35,10 +33,10 @@ class EqSpec extends WordSpec with MustMatchers with GatoFixture {
     "work on Gatos" in {
       // TODO 01: Equality should work between gatos
       /*
-      Eq[Gato].eqv(cat1, cat2) must_be (false)
-      (cat1.some === none[Gato]) must_be (false)
+      Eq[Gato].eqv(cat1, cat2) `must be` (false)
+      (cat1.some === none[Gato]) `must be` (false)
 
-      Gato.isEqual(cat1, cat2) must_be (false)
+      Gato.isEqual(cat1, cat2) `must be` (false)
        */
       fail("WIP")
     }
@@ -50,7 +48,7 @@ class EqSpec extends WordSpec with MustMatchers with GatoFixture {
 object EqSpecOps {
 
   implicit class BooleanOps(a: Boolean) {
-    def must_be(b: Boolean): Unit = {
+    def `must be`(b: Boolean): Unit = {
       if (a != b) throw new IllegalArgumentException(s"$a is not equal to $b")
     }
   }
