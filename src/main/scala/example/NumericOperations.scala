@@ -29,7 +29,7 @@ object NumericOperations {
     val ans: Int = slowly {
       if (n == 0) 1 else n * factorial(n - 1)
     }
-    println(s"fact $n $ans")
+    println(s"fact($n)")
     ans
   }
 
