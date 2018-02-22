@@ -1,6 +1,5 @@
 package example
 
-import cats.kernel.Semigroup
 import example.fixtures.OrderFixture
 import org.scalatest.{MustMatchers, WordSpec}
 
