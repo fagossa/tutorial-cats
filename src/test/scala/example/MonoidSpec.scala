@@ -1,5 +1,6 @@
 package example
 
+import cats.kernel.Semigroup
 import example.fixtures.OrderFixture
 import org.scalatest.{MustMatchers, WordSpec}
 
@@ -98,6 +99,8 @@ class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
       import cats.instances.option._
 
       Monoid[Option[Int]].combine(1.some, 2.some) must be(3.some)
+      Monoid[Option[Int]].combine(None, 2.some) must be(2.some)
+      Monoid[Option[Int]].combine(1.some, None) must be(1.some)
     }
 
     "sum Monoid[T] in a generic way" which {
