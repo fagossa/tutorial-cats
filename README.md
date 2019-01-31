@@ -1,7 +1,7 @@
 Tutorial cats
 ======
 
-Your job is to make all the test *green*!.
+Your job is to make all the test *green*!
 
 Notice that:
 
@@ -21,12 +21,13 @@ Comparing with `Eq`, `===` and `=!=`
 
 ## TODO `02` - `Printable`
 
-Implement the printable for `Gato` (spanish for `Cat`)
+Implement the printable for `Gato` (spanish for `Cat`).
 
 `cats` usually split `typeclasses` in the following way:
+
 * A trait defining the general behavior
 * A companion object that contains the type classes
-* A syntax object containing `implicit class`es
+* A syntax object containing `implicit class(es)`
 
 ```
 ~testOnly example.PrintableSpec
@@ -35,7 +36,7 @@ Implement the printable for `Gato` (spanish for `Cat`)
 
 ## TODO `03` - `Monoid`
 
-Monoids can `combine` two elements of the same type (thanks to `semigroup`) and have an `empty` element
+Monoids can `combine` two elements of the same type (thanks to `semigroup`) and have an `empty` element.
 
 > `|+|` is an alias for `combine` present in semigroup
 
@@ -45,9 +46,9 @@ Monoids can `combine` two elements of the same type (thanks to `semigroup`) and 
 
 ## TODO `04` - `Functor`
 
-Playing with Functors in 
+Playing with Functors.
 
-Functors can `map` over something
+> Functors can `map` over something
 
 ```
 ~testOnly example.FunctorSpec
@@ -59,6 +60,7 @@ Functors can `map` over something
 Handling additional information to the main logic flow.
 
 > Write monad add additional information
+
 > Read monad expects contextual information
 
 ```
@@ -68,7 +70,7 @@ Handling additional information to the main logic flow.
 
 ## TODO `06` - `State`
 
-Solving equations
+Solving equations.
 
 > State Monad cumulates values
 
@@ -96,7 +98,7 @@ import cats._
 import cats.implicits._
 ```
 
-however one of the goals of this exercise is to be able to __identify where the typeclass implementation is located__.
+However one of the goals of this exercise is to be able to __identify where the typeclass implementation is located__.
 
 ## Contribution policy ##
 
