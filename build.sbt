@@ -8,7 +8,7 @@ lazy val root = (project in file("."))
   .settings(
     inThisBuild(List(
       organization := "com.example",
-      scalaVersion := "2.12.4",
+      scalaVersion := "2.13.0",
       version      := "0.1.0-SNAPSHOT"
     )),
     name := "Tutorial cats",
@@ -25,8 +25,8 @@ lazy val root = (project in file("."))
     fmtSettings,
     scalacOptions ++= {
        scalaCSettings ++ (scalaBinaryVersion.value match {
-        case "2.11" => Seq.empty
-        case _ => scalaC_2_12Settings
+        case "2.12" => scalaC_2_12Settings
+        case _ => scalaC_2_13Settings
       })
     }
   )
@@ -51,7 +51,19 @@ lazy val scalaCSettings =
     "-unchecked",                        // Enable additional warnings where generated code depends on assumptions.
     "-Xcheckinit",                       // Wrap field accessors to throw an exception on uninitialized access.
     "-Xfatal-warnings",                  // Fail the compilation if there are any warnings.
+    "-Ywarn-dead-code",                  // Warn when dead code is identified.
+    "-Ywarn-numeric-widen",              // Warn when numerics are widened.
+    "-Ywarn-value-discard"               // Warn when non-Unit expression results are unused.
+  )
+
+lazy val scalaC_2_12Settings =
+  Seq(// 2.12+ specific options
     "-Xfuture",                          // Turn on future language features.
+    "-Ywarn-nullary-unit",               // Warn when nullary methods return Unit.
+    "-Ywarn-nullary-override",           // Warn when non-nullary `def f()' overrides nullary `def f'.
+    "-Ywarn-infer-any",                  // Warn when a type argument is inferred to be `Any`.
+    "-Ywarn-inaccessible",               // Warn about inaccessible types in method signatures.
+    "-Ypartial-unification",             // Enable partial unification in type constructor inference
     "-Xlint:adapted-args",               // Warn if an argument list is modified to match the receiver.
     "-Xlint:by-name-right-associative",  // By-name parameter of right associative operator.
     "-Xlint:delayedinit-select",         // Selecting member of DelayedInit.
@@ -68,20 +80,8 @@ lazy val scalaCSettings =
     "-Xlint:stars-align",                // Pattern sequence wildcard must align with sequence component.
     "-Xlint:type-parameter-shadow",      // A local type parameter shadows a type already in scope.
     "-Xlint:unsound-match",              // Pattern match may not be typesafe.
-    "-Yno-adapted-args",                 // Do not adapt an argument list (either by inserting () or creating a tuple) to match the receiver.
-    "-Ypartial-unification",             // Enable partial unification in type constructor inference
-    "-Ywarn-dead-code",                  // Warn when dead code is identified.
-    "-Ywarn-inaccessible",               // Warn about inaccessible types in method signatures.
-    "-Ywarn-infer-any",                  // Warn when a type argument is inferred to be `Any`.
-    "-Ywarn-nullary-override",           // Warn when non-nullary `def f()' overrides nullary `def f'.
-    "-Ywarn-nullary-unit",               // Warn when nullary methods return Unit.
-    "-Ywarn-numeric-widen",              // Warn when numerics are widened.
-    "-Ywarn-value-discard"               // Warn when non-Unit expression results are unused.
-  )
-
-lazy val scalaC_2_12Settings =
-  Seq(// 2.12+ specific options
     "-Xlint:constant",                   // Evaluation of a constant arithmetic expression results in an error.
+    "-Yno-adapted-args",                 // Do not adapt an argument list (either by inserting () or creating a tuple) to match the receiver.
     "-Ywarn-extra-implicit",             // Warn when more than one implicit parameter section is defined.
     "-Ywarn-unused:implicits",           // Warn if an implicit parameter is unused.
     "-Ywarn-unused:imports",             // Warn if an import selector is not referenced.
@@ -89,6 +89,11 @@ lazy val scalaC_2_12Settings =
     "-Ywarn-unused:params",              // Warn if a value parameter is unused.
     "-Ywarn-unused:patvars",             // Warn if a variable bound in a pattern is unused.
     "-Ywarn-unused:privates",            // Warn if a private member is unused.
+  )
+
+lazy val scalaC_2_13Settings =
+  Seq(// 2.12+ specific options
+
   )
 
 scalacOptions in (Compile, console) --= Seq("-Ywarn-unused:imports", "-Xfatal-warnings")
