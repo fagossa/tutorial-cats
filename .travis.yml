@@ -1,22 +1,18 @@
+dist: xenial
 language: scala
+
 scala:
   - 2.13.0
 
-matrix:
-  include:
-    - env: SCALA_VERSION=2.13.0 PUBLISH=1
-      os: linux
-      jdk: oraclejdk8
-      sudo: required
-      services:
-        - docker
+jdk:
+  - openjdk8
 
 branches:
   only:
   - solution
+
 cache:
   directories:
-  - $HOME/.m2
-  - $HOME/.ivy2/cache
-  - $HOME/.sbt
-  - $HOME/.coursier
+    - $HOME/.ivy2/cache
+    - $HOME/.sbt/boot
+    - $HOME/.coursier
