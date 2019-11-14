@@ -1,10 +1,10 @@
 language: scala
 scala:
-  - 2.12.4
+  - 2.13.0
 
 matrix:
   include:
-    - env: SCALA_VERSION=2.12.4 PUBLISH=1
+    - env: SCALA_VERSION=2.13.0 PUBLISH=1
       os: linux
       jdk: oraclejdk8
       sudo: required
