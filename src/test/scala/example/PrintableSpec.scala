@@ -1,10 +1,10 @@
 package example
 
-import example.Printable.format
 import example.fixtures.GatoFixture
-import org.scalatest.{MustMatchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.must.Matchers
 
-class PrintableSpec extends WordSpec with MustMatchers with GatoFixture {
+class PrintableSpec extends AnyWordSpec with Matchers with GatoFixture {
 
   "Printable" must {
 

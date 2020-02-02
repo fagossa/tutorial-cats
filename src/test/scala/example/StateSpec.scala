@@ -1,8 +1,9 @@
 package example
 
-import org.scalatest.{MustMatchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.must.Matchers
 
-class StateSpec extends WordSpec with MustMatchers {
+class StateSpec extends AnyWordSpec with Matchers {
 
   "State" must {
 

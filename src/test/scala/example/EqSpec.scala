@@ -1,9 +1,10 @@
 package example
 
 import example.fixtures.GatoFixture
-import org.scalatest.{MustMatchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.must.Matchers
 
-class EqSpec extends WordSpec with MustMatchers with GatoFixture {
+class EqSpec extends AnyWordSpec with Matchers with GatoFixture {
   import cats.syntax.eq._
   import EqSpecOps._
 

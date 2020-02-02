@@ -1,8 +1,9 @@
 package example
 
-import org.scalatest.{MustMatchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.must.Matchers
 
-class ValidationSpec extends WordSpec with MustMatchers {
+class ValidationSpec extends AnyWordSpec with Matchers {
 
   "Validation" must {
 

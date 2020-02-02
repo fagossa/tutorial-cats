@@ -1,9 +1,10 @@
 package example
 
 import example.fixtures.OrderFixture
-import org.scalatest.{MustMatchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.must.Matchers
 
-class MonoidSpec extends WordSpec with MustMatchers with OrderFixture {
+class MonoidSpec extends AnyWordSpec with Matchers with OrderFixture {
 
   import cats.Monoid
 

@@ -2,12 +2,13 @@ package example
 
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.time.{Millis, Seconds, Span}
-import org.scalatest.{MustMatchers, WordSpec}
 
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.must.Matchers
 
-class WriteAndReadSpec extends WordSpec with MustMatchers with ScalaFutures {
+class WriteAndReadSpec extends AnyWordSpec with Matchers with ScalaFutures {
 
   implicit val defaultPatience =
     PatienceConfig(timeout = Span(2, Seconds), interval = Span(500, Millis))
